@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<input type="text" id="txtName">
+	<span id="errMsg"></span>
+	<br/>
+	<button onclick="testData()">Test</button>
+
+	<script type="text/javascript">
+		function testData(){
+			name = document.getElementById('txtName').value;
+
+			//23 01 01 01 173
+
+			pattern = "^0281[0-9]{7}$";
+
+			regexp = new RegExp(pattern);
+
+			if(regexp.test(name)){
+				document.getElementById('errMsg').innerHTML = "Valid"
+			}
+			else{
+				document.getElementById('errMsg').innerHTML = "Invalid"
+			}
+
+		}
+	</script>
+</body>
+</html>

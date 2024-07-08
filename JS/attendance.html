@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		#absentNo{
+			position: fixed;
+			left: 50%;
+			top: 200px;
+			width: 30%;
+			background-color: lightcoral;
+		}
+	</style>
+</head>
+<body>
+	<button onclick="allPresent()">All Present</button>
+	<button onclick="allAbsent()">All Absent</button>
+	<div id="students">
+		
+	</div>
+
+	<div id="absentNo">
+		
+	</div>
+	
+
+	<script type="text/javascript">
+		stuRef = document.getElementById('students');
+		for(i=301;i<474;i++){
+			stuRef.innerHTML += "<input type='checkbox' value='"+i+"' onclick='updateAbsent()' />"+i+"<br/>";
+		}
+
+		function allPresent(){
+			allChecks = document.getElementsByTagName('input');
+
+			for(i=0;i<allChecks.length;i++){
+				allChecks[i].checked = "checked";
+			}
+		}
+
+		function allAbsent(){
+			allChecks = document.getElementsByTagName('input');
+
+			for(i=0;i<allChecks.length;i++){
+				allChecks[i].checked = "";
+			}
+		}
+
+		function updateAbsent(){
+			allChecks = document.getElementsByTagName('input');
+
+			abNos = [];
+			for(i=0;i<allChecks.length;i++){
+				if(allChecks[i].checked == ""){
+					abNos.push(allChecks[i].value);
+				}
+			}
+
+			document.getElementById('absentNo').innerHTML = abNos.join(", ");
+		}
+	</script>
+</body>
+</html>

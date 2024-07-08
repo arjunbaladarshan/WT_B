@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style>
+		#myImg{
+			position: absolute;
+			left: 300px;
+		}
+
+		#khavaniImg{
+			width: 30px;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<button onclick="startLeft()">Left</button>
+	<button onclick="startRight()">Right</button>
+	<button onclick="startUp()">Up</button>
+	<button onclick="startDown()">Down</button>
+	<br/>
+	<img src="dice1.jpg" id="myImg">
+
+	<img src="CEAVB.jpg" id="khavaniImg">
+
+	<script type="text/javascript">
+		currentLeft = 300;
+		currentTop = 50;
+
+		iLeft = 0;
+		iTop = 0;
+
+		function clearAllInterval(){
+			clearInterval(iLeft);
+			clearInterval(iTop);
+		}
+
+		function startLeft(){
+			clearAllInterval();
+			iLeft = setInterval(moveLeft,5)
+		}
+
+		function startRight(){
+			clearAllInterval();
+			iLeft = setInterval(moveRight,5)
+		}
+
+		function startUp(){
+			clearAllInterval();
+			iTop = setInterval(moveUp,5)
+		}
+
+		function startDown(){
+			clearAllInterval();	
+			iTop = setInterval(moveDown,5)
+		}
+
+		function moveLeft(){
+			currentLeft--;
+			if(currentLeft<0){
+				currentLeft = screen.availWidth-36;
+			}
+			imgRef = document.getElementById('myImg');
+			imgRef.style.left = currentLeft+"px";
+		}
+		function moveRight(){
+			currentLeft++;
+			if(currentLeft>screen.availWidth-36){
+				currentLeft=0;
+			}
+			imgRef = document.getElementById('myImg');
+			imgRef.style.left = currentLeft+"px";
+		}
+
+		function moveUp(){
+			currentTop--;
+			imgRef = document.getElementById('myImg');
+			imgRef.style.top = currentTop+"px";
+		}
+		function moveDown(){
+			currentTop++;
+			imgRef = document.getElementById('myImg');
+			imgRef.style.top = currentTop+"px";
+		}
+
+		function changeKhavaniPosition(){
+			khavniImgRef = document.getElementById('khavaniImg')
+			leftPos = parseInt(Math.random()*(screen.availWidth-36));
+			topPos = parseInt(Math.random()*(screen.availHeight-36));
+
+			khavniImgRef.style.left = leftPos+"px";
+			khavniImgRef.style.top = topPos+"px";
+		}
+
+		changeKhavaniPosition();
+	</script>
+</body>
+</html>

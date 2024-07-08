@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<button onclick="startCounter()">Start</button>
+	<button onclick="stopCounter()">Stop</button>
+	<h1 id="answer">0</h1>
+	<script type="text/javascript">
+		count = 0;
+		c =  0;
+		function startCounter(){
+			c = setInterval(incrementData,10);
+		}
+		function stopCounter(){
+			clearInterval(c);
+		}
+		function incrementData(){
+			count++;
+			seconds = parseInt(count/100);
+			miliseconds = count%100;
+			document.getElementById('answer').innerHTML = seconds+":"+miliseconds;
+		}
+	</script>
+</body>
+</html>
