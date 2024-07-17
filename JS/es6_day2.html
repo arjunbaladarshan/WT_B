@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		arr = [
+				{
+					name:'arjun',
+					spi:2.5
+				},
+				{
+					name:'bala',
+					spi:7.1
+				},
+				{
+					name:'darshan',
+					spi:8.2
+				}
+			];
+
+		newArr = arr.map((temp)=>{
+			return("<h1>"+temp.name+"</h1>")
+		});
+
+		document.write(newArr.join(" "))
+		
+	</script>
+</body>
+</html>

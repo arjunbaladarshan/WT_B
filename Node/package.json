@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "express": "^4.19.2",
+    "hy-visitor-counter": "^1.0.1"
+  }
+}

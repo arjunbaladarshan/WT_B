@@ -7,17 +7,11 @@
 </head>
 <body>
 	<script type="text/javascript">
-		a = 10; // global scope
-		function abc() {
-			var a = 20; // function scope
-			if(true){
-				let a = 30; // block scope
-				console.log("Value of a inside block = ",a);
-			}
-			console.log("Value of a inside function = ",a);
-		}
-		abc();
-		console.log("Value of a outside function = ",a);
+		arr = [25,26,32,15,35];
+
+		ans = arr.filter(data=>data>25)
+
+		console.log(ans)
 
 	</script>
 </body>
